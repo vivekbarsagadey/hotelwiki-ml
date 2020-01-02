@@ -1,5 +1,5 @@
 from application.resources.controllers.user_input import user_fields, download_fields
-from application.resources.generator.text_generator import interact_model
+from application.resources.generator.text_generator import InteractionModel
 from application.resources.generator.download_model import download_model
 from flask_restplus import Resource
 from application import api
@@ -22,8 +22,8 @@ class RecommenderController(Resource):
     def post(self):
         json_data = request.get_json(force=True)
         out = json_data['Input Data']
-        print(type(out))
-        genrated_data = interact_model(out)
+        cls_obj = InteractionModel()
+        genrated_data = cls_obj.interact_model(out)
         print(genrated_data)
         return genrated_data
 
