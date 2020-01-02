@@ -1,17 +1,16 @@
-from application.resources.recommender.user_input import user_fields, upload_parser, download_fields
-from application.src.interactive_conditional_samples import interact_model
-from application.src.download_model import download_model
+from application.resources.recommender.user_input import user_fields, download_fields
+from application.resources.generator.text_generator import interact_model
+from application.resources.generator.download_model import download_model
 from flask_restplus import Resource
 from application import api
 from flask import request
 
-downloader = api.namespace('Model Downloader', description='Operations to download Model')
-generater = api.namespace('Text Generation', description='Operations related to Text Generation')
+downloader = api.namespace('downloadmodel', description='Operations to download Model')
+generater = api.namespace('generatetext', description='Operations related to Text Generation')
 
-@generater.route('/', endpoint='/generatetext')
-class recommenderController(Resource):
 
-    @api.expect(upload_parser, validate=False)
+@generater.route('/', endpoint='/generatetext/<string:todo_id>')
+class RecommenderController(Resource):
     def get(self):
         return 'Generation GET method Called'
 
@@ -30,8 +29,7 @@ class recommenderController(Resource):
 
 
 @downloader.route('/', endpoint='/downloadmodel')
-class downloadController(Resource):
-
+class DownloadController(Resource):
 
     @api.expect(download_fields, validate=False)
     @api.doc(responses={
