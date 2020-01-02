@@ -1,5 +1,3 @@
-"""Byte pair encoding utilities"""
-
 import os
 import json
 import regex as re

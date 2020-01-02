@@ -1,13 +1,8 @@
-#!/usr/bin/env python3
-# Usage:
-#  PYTHONPATH=src ./encode.py <file|directory|glob> /path/to/output.npz
-#  PYTHONPATH=src ./train --dataset /path/to/output.npz
-
 import argparse
 import numpy as np
 
-from application.src import encoder
-from application.src.load_dataset import load_dataset
+from application.resources.generator import encoder
+from application.resources.generator.load_dataset import load_dataset
 
 parser = argparse.ArgumentParser(
     description='Pre-encode text files into tokenized training set.',

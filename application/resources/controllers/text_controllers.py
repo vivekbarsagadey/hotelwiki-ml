@@ -1,4 +1,4 @@
-from application.resources.recommender.user_input import user_fields, download_fields
+from application.resources.controllers.user_input import user_fields, download_fields
 from application.resources.generator.text_generator import interact_model
 from application.resources.generator.download_model import download_model
 from flask_restplus import Resource
