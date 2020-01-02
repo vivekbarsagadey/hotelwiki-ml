@@ -1,2 +1,2 @@
-from application.resources.recommender.recom_controllers import recommenderController
-from application.resources.recommender.recom_controllers import downloadController
+from application.resources.controllers.text_controllers import RecommenderController
+from application.resources.controllers.text_controllers import DownloadController
