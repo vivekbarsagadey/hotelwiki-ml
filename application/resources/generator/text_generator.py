@@ -2,7 +2,7 @@ import json
 import os
 import numpy as np
 import tensorflow as tf
-from application.src import model, sample, encoder
+from application.resources.generator import sample, encoder, model
 
 BASE_DIR = os.path.abspath(os.path.dirname(__name__))
 out_text = []

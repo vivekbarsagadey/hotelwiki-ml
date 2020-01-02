@@ -1,6 +1,7 @@
 import tensorflow as tf
 
-from application.src import model
+from application.resources.generator import model
+
 
 def top_k_logits(logits, k):
     if k == 0:

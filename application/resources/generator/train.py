@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Usage:
-#  PYTHONPATH=src ./train --dataset <file|directory|glob>
+#  PYTHONPATH=generator ./train --dataset <file|directory|glob>
 
 import argparse
 import json
