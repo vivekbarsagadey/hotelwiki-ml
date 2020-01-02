@@ -7,7 +7,7 @@ CORS(app)
 
 app.config.from_envvar('APP_SETTINGS')
 
-api = Api(app, title='Word Prediction', description='Created by Whiz IT Services', default='Flask', default_label='Controllers',
+api = Api(app, title='Text Generation', description='Created by Whiz IT Services', default='Flask', default_label='Controllers',
           validate=True)
 
 from application.resources import home
