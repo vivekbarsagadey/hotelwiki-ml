@@ -9,18 +9,19 @@ downloader = api.namespace('downloadmodel', description='Operations to download 
 generater = api.namespace('generatetext', description='Operations related to Text Generation')
 
 
-@generater.route('/', endpoint='/generatetext/<string:todo_id>')
-class RecommenderController(Resource):
+@generater.route('/', endpoint='/generatetext')
+class GeneratorController(Resource):
+    @generater.doc('list_todo')
     def get(self):
         return 'Generation GET method Called'
 
-    @api.expect(user_fields, validate=False)
-    @api.doc(responses={
+    @generater.expect(user_fields, validate=False)
+    @generater.doc(responses={
         200: 'Words Generated',
         400: 'Validation Error'
     })
     def post(self):
-        json_data = request.get_json(force=True)
+        json_data = api.payload
         out = json_data['Input Data']
         cls_obj = InteractionModel()
         genrated_data = cls_obj.interact_model(out)
@@ -31,12 +32,12 @@ class RecommenderController(Resource):
 @downloader.route('/', endpoint='/downloadmodel')
 class DownloadController(Resource):
 
-    @api.expect(download_fields, validate=False)
-    @api.doc(responses={
+    @downloader.expect(download_fields, validate=False)
+    @downloader.doc(responses={
         200: 'Model Downloaded',
         400: 'Validation Error'
     })
     def post(self):
-        json_data = request.get_json(force=True)
+        json_data = api.payload
         out = json_data['Model Name']
         return download_model(out)
