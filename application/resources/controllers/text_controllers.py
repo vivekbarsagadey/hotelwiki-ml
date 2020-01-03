@@ -3,7 +3,6 @@ from application.resources.generator.text_generator import InteractionModel
 from application.resources.generator.download_model import download_model
 from flask_restplus import Resource
 from application import api
-from flask import request
 
 downloader = api.namespace('downloadmodel', description='Operations to download Model')
 generater = api.namespace('generatetext', description='Operations related to Text Generation')
