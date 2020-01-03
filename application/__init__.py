@@ -7,7 +7,8 @@ CORS(app)
 
 app.config.from_envvar('APP_SETTINGS')
 
-api = Api(app, title='Text Generation', description='Created by Whiz IT Services', default='Flask', default_label='Controllers',
-          validate=True)
+api = Api(app, title='Text Generation', description='Created by Whiz IT Services', default='Flask',
+          default_label='Controllers', doc='/swagger-ui',
+          contact_url='https://whizit.co.in/', validate=True)
 
 from application.resources import home

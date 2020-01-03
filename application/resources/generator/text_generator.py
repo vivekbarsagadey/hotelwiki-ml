@@ -7,10 +7,10 @@ from application.resources.generator import sample, encoder, model
 BASE_DIR = os.path.abspath(os.path.dirname(__name__))
 out_text = []
 
+
 class InteractionModel:
     def __init__(self):
         print("INIT method for Interaction Model ")
-
 
     def interact_model(self, input_data=""):
         #     """
